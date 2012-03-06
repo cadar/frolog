@@ -1,0 +1,49 @@
+swipl
+% library(swi_hooks) compiled into pce_swi_hooks 0.00 sec, 3,856 bytes
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 5.10.1)
+Copyright (c) 1990-2010 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- ['frolog.pl'].
+% frolog.pl compiled 0.00 sec, 15,856 bytes
+true.
+
+?- run([1,2,3,X,Y],[6]),!.
+X = (+),
+Y = (+).
+
+?- run([1,2,3,X,Y],[5]),!.
+X = (+),
+Y = (*).
+
+?- run([1,2,3,X,Y],[4]),!.
+X = (+),
+Y = (-).
+
+?- run(["head",X],["ead"]),!.
+X = tl.
+
+?- run(["head",X,Y],["dae"]),!.
+X = tl,
+Y = rev.
+
+?- run(["head","tail",Y],["headtail"]),!.
+Y = concat.
+
+?- run(["head","tail",Y],["tailhead"]),!.
+Y = append.
+
+?- run(["head","tail",X,Y],["eadtail"]),!.
+X = concat,
+Y = tl.
+
+?- run(["head","tail",swap,tl,X],["eadtail"]),!.
+X = append.
+
+?- run(["head","tail",Z,tl,X],["eadtail"]),!.
+Z = swap,
+X = append.
